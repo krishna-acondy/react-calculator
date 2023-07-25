@@ -24,8 +24,8 @@ const buttons = [
 
 const Buttons = () => {
 
-  const clickHandler = e => {
-    console.log(e)
+  const clickHandler = value => {
+    console.log(value)
   }
 
   return (
@@ -33,7 +33,7 @@ const Buttons = () => {
       {buttons.map(button =>
         <button
           key={button.value}
-          onClick={clickHandler}
+          onClick={() => clickHandler(button.value)}
           className={`button${button.type === 'number' ? '' : button.type === 'operator' ? '-operator' : '-zero'}`} >
           {button.value}
         </button>
