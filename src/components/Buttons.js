@@ -22,10 +22,10 @@ const buttons = [
   { value: '=', type: 'operator' },
 ]
 
-const Buttons = () => {
+const Buttons = ({ onButtonClick }) => {
 
   const clickHandler = value => {
-    console.log(value)
+    onButtonClick(value)
   }
 
   return (
