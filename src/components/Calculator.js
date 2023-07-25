@@ -6,13 +6,15 @@ import Buttons from "./Buttons";
 
 
 const Calculator = () => {
-  function onButtonClick(e) {
-    console.log('inside calculator: ', e)
+  const [value, setValue] = React.useState(0)
+
+  function onButtonClick(val) {
+    setValue(val)
   }
 
   return (
     <div className="calc">
-      <Screen value={1} />
+      <Screen value={value} />
       <Buttons onButtonClick={onButtonClick} />
     </div>
     )
