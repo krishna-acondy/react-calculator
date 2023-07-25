@@ -1,4 +1,4 @@
-.buttons {
+.button {
   background: radial-gradient(#fefefe, #bbbbbb);
   width: 8rem;
   height: 3rem;
@@ -7,7 +7,7 @@
   margin-top: 1rem;
 }
 
-.buttons-side {
+.button-operator {
   background: radial-gradient(#eba974, #fe9c3a);
   width: 8rem;
   height: 3rem;
@@ -16,7 +16,7 @@
   margin-top: 1rem;
 }
 
-.buttons:hover {
+.button:hover {
   background: radial-gradient(#bbbbbb, #b4b4b4);
 }
 
@@ -24,7 +24,7 @@
   background: radial-gradient(#bbbbbb, #b4b4b4);
 }
 
-.buttons-side:hover {
+.button-operator:hover {
   background: radial-gradient(#b2713b, #9f662c);
 }
 

@@ -1,5 +1,27 @@
 import React from "react";
 
+const buttons = [
+  { value: 'AC', type: 'operator' },
+  { value: '±', type: 'operator' },
+  { value: '%', type: 'operator' },
+  { value: '+', type: 'operator' },
+  { value: 7, type: 'number' },
+  { value: 8, type: 'number' },
+  { value: 9, type: 'number' },
+  { value: '-', type: 'operator' },
+  { value: 4, type: 'number' },
+  { value: 5, type: 'number' },
+  { value: 6, type: 'number' },
+  { value: 'X', type: 'operator' },
+  { value: 1, type: 'number' },
+  { value: 2, type: 'number' },
+  { value: 3, type: 'number' },
+  { value: '/', type: 'operator' },
+  { value: 0, type: 'zero' },
+  { value: '.', type: 'operator' },
+  { value: '=', type: 'operator' },
+]
+
 const Buttons = () => {
 
   const clickHandler = e => {
@@ -8,26 +30,16 @@ const Buttons = () => {
 
   return (
     <div>
-      <button onClick={clickHandler} className="buttons-side">AC</button>
-      <button onClick={clickHandler} className="buttons-side">±</button>
-      <button onClick={clickHandler} className="buttons-side">%</button>
-      <button onClick={clickHandler} className="buttons-side">+</button>
-      <button onClick={clickHandler} className="buttons">7</button>
-      <button onClick={clickHandler} className="buttons">8</button>
-      <button onClick={clickHandler} className="buttons">9</button>
-      <button onClick={clickHandler} className="buttons-side">-</button>
-      <button onClick={clickHandler} className="buttons">4</button>
-      <button onClick={clickHandler} className="buttons">5</button>
-      <button onClick={clickHandler} className="buttons">6</button>
-      <button onClick={clickHandler} className="buttons-side">X</button>
-      <button onClick={clickHandler} className="buttons">1</button>
-      <button onClick={clickHandler} className="buttons">2</button>
-      <button onClick={clickHandler} className="buttons">3</button>
-      <button onClick={clickHandler} className="buttons-side">/</button>
-      <button onClick={clickHandler} className="button-zero">0</button>
-      <button onClick={clickHandler} className="buttons-side">.</button>
-      <button onClick={clickHandler} className="buttons-side">=</button>
+      {buttons.map(button =>
+        <button
+          key={button.value}
+          onClick={clickHandler}
+          className={`button${button.type === 'number' ? '' : button.type === 'operator' ? '-operator' : '-zero'}`} >
+          {button.value}
+        </button>
+      )}
     </div>
-  ) }
+  )
+}
 
 export default Buttons;
