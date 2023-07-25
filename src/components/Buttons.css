@@ -1,0 +1,38 @@
+.buttons {
+  background: radial-gradient(#fefefe, #bbbbbb);
+  width: 8rem;
+  height: 3rem;
+  margin-right: 1rem;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+.buttons-side {
+  background: radial-gradient(#eba974, #fe9c3a);
+  width: 8rem;
+  height: 3rem;
+  margin-right: 1rem;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+.buttons:hover {
+  background: radial-gradient(#bbbbbb, #b4b4b4);
+}
+
+.button-zero:hover {
+  background: radial-gradient(#bbbbbb, #b4b4b4);
+}
+
+.buttons-side:hover {
+  background: radial-gradient(#b2713b, #9f662c);
+}
+
+.button-zero {
+  background: radial-gradient(#fefefe, #bbbbbb);
+  width: 17rem;
+  height: 3rem;
+  margin-right: 1rem;
+  flex-direction: row;
+  margin-top: 1rem;
+}

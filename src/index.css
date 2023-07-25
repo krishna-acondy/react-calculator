@@ -1,0 +1,27 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.calc {
+  background: rgb(182, 106, 0);
+  width: 40rem;
+  padding: 2rem;
+  margin-top: 4rem;
+  border-radius: 1rem;
+  color: aliceblue;
+}
+
