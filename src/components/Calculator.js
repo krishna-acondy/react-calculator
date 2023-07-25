@@ -9,12 +9,7 @@ const Calculator = () => {
   const [value, setValue] = React.useState(0)
   const operators = ["X", "%", "±", "AC", "+", "-", "/", "="]
 
-  const onButtonClick = (val) => setValue(operators.includes(val) ? '' : val)
-
-  // function onButtonClick(val) {
-    //   setValue(val)
-    // }
-
+  const onButtonClick = (val) => setValue(prevValue => operators.includes(val) ? prevValue : val)
 
   return (
     <div className="calc">
