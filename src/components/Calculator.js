@@ -7,10 +7,14 @@ import Buttons from "./Buttons";
 
 const Calculator = () => {
   const [value, setValue] = React.useState(0)
+  const operators = ["X", "%", "±", "AC", "+", "-", "/", "="]
 
-  function onButtonClick(val) {
-    setValue(val)
-  }
+  const onButtonClick = (val) => setValue(operators.includes(val) ? '' : val)
+
+  // function onButtonClick(val) {
+    //   setValue(val)
+    // }
+
 
   return (
     <div className="calc">
