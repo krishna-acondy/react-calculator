@@ -14,16 +14,17 @@ const Calculator = () => {
 
   const onButtonClick = (val) => {
     if (!operators.includes(val)) {
-      if (val === '.') {
+      if (val === ".") {
         if (!value.toString().includes(".")) {
-          setValue((prevValue) => prevValue + ".");
-        } 
+          setValue((prevValue) => prevValue + val);
+        }
       } else {
         setValue((prevValue) => {
-          return prevValue === "0" ? val : prevValue + val;
+          const newVal = parseFloat(`${prevValue}${val}`)
+          return newVal
         })
       }
-  } else if (val === "AC") {
+    } else if (val === "AC") {
     setValue(0)
     setPrevValue(0)
     setOperator(null)
@@ -51,7 +52,7 @@ const Calculator = () => {
           setValue((previous / current).toString())
           break;
         case "%":
-          setValue((previous / 100) * current).toString()
+          setValue(((previous / 100) * current).toString())
           break;
         default:
           break;
