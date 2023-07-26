@@ -15,7 +15,7 @@ const Calculator = () => {
   const onButtonClick = (val) => {
     if (!operators.includes(val)) {
       setValue((prevValue) => {
-        const newVal = parseInt(prevValue.toString() + val)
+        const newVal = parseInt(`${prevValue}${val}`)
         return newVal
       } );
   } else if (val === "AC") {
