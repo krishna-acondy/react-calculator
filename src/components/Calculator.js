@@ -7,13 +7,16 @@ import Buttons from "./Buttons";
 
 const Calculator = () => {
   const [value, setValue] = React.useState(0)
+
   const operators = ["X", "%", "±", "AC", "+", "-", "/", "="]
 
   const onButtonClick = (val) => {
     if (!operators.includes(val)) {
-      setValue(val)
-    }
+      setValue((prevValue) => {
+        return parseInt(prevValue.toString() + val)
+      } )
   }
+}
 
   return (
     <div className="calc">
@@ -23,4 +26,5 @@ const Calculator = () => {
     )
   }
 
-export default Calculator;
+    
+    export default Calculator;
