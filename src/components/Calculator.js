@@ -22,6 +22,10 @@ const Calculator = () => {
     setValue(0)
     setPrevValue(0)
     setOperator(null)
+  } else if (val === "±") {
+    setValue(-(value))
+    setOperator(null)
+    setPrevValue(-(prevValue))
   } else if (val === "=") {
     if (operator && prevValue !== null) {
       switch (operator) {
@@ -40,8 +44,6 @@ const Calculator = () => {
         case "%":
           setValue((prevValue / 100) * value)
           break;
-        // case '±':
-        //   setValue()
         default:
           break;
       }
