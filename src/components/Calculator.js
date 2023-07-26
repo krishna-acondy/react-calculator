@@ -14,35 +14,44 @@ const Calculator = () => {
 
   const onButtonClick = (val) => {
     if (!operators.includes(val)) {
-      setValue((prevValue) => {
-        const newVal = parseInt(`${prevValue}${val}`)
-        return newVal
-      } );
+      if (val === '.') {
+        if (!value.toString().includes(".")) {
+          setValue((prevValue) => prevValue + ".");
+        } 
+      } else {
+        setValue((prevValue) => {
+          return prevValue === "0" ? val : prevValue + val;
+        })
+      }
   } else if (val === "AC") {
     setValue(0)
     setPrevValue(0)
     setOperator(null)
   } else if (val === "±") {
-    setValue(-(value))
+    setValue((value) => (-parseFloat(value)).toString());
     setOperator(null)
-    setPrevValue(-(prevValue))
+    if (prevValue != null) {
+      setPrevValue((prevValue) => (-parseFloat(prevValue)).toString());
+    }
   } else if (val === "=") {
     if (operator && prevValue !== null) {
+      const current = parseFloat(value)
+      const previous = parseFloat(prevValue)
       switch (operator) {
         case "+":
-          setValue(prevValue + value)
+          setValue((previous + current).toString())
           break;
         case "-":
-          setValue(prevValue - value)
+          setValue((previous - current).toString())
           break;
         case "X":
-          setValue(prevValue * value)
+          setValue((previous * current).toString())
           break;
         case "/":
-          setValue(prevValue / value)
+          setValue((previous / current).toString())
           break;
         case "%":
-          setValue((prevValue / 100) * value)
+          setValue((previous / 100) * current).toString()
           break;
         default:
           break;
